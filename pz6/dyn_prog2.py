@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
-def different_prices(n, k):
+def different_prices(n):
     if n <= 0:
         return 0
 
     price = [0] * (n + 1)
     for i in range(1, n + 1):
-        price[i] = price[i - 1] + k
+        price[i] = price[i - 1] + 1
 
     df = [0] * (n + 1)
     df[1] = price[1]
@@ -34,8 +34,7 @@ def different_prices(n, k):
     return df[n], prices_optimal, index_optimal
 
 n = int(input('Введите значение n: '))
-k = int(input('Введите значение k: '))
-result, prices, index = different_prices(n, k)
+result, prices, index = different_prices(n)
 
 all_price = [0] * len(prices)
 
